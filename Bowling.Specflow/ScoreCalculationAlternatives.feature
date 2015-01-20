@@ -40,4 +40,29 @@ Scenario: Yet another beginners game
   |	1		|
   |	1		|
   Then my total score should be 43
-  
+
+Scenario: An intermediate game
+ Given a new bowling game
+ When I roll
+  | Pins	|
+  |	2		|
+  |	7		|
+  |	6		|
+  |	5		|
+  |	4		|
+  |	7		|
+  |	5		|
+  |	3		|
+  |	8		|
+  |	3		|
+  |	6		|
+  |	4		|
+  |	5		|
+  |	7		|
+  |	9		|
+  |	1		|
+  |	8		|
+  |	2		|
+  |	3		|
+  |	3		|
+  Then my total score should be 98
