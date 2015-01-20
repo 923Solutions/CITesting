@@ -9,6 +9,5 @@ C:\Source\BowlingKata-Nunit\Bowling\bin\Debug\Bowling.dll.config
 C:\Source\BowlingKata-Nunit\Bowling\bin\Debug\Bowling.dll
 C:\Source\BowlingKata-Nunit\Bowling\bin\Debug\Bowling.pdb
 C:\Source\BowlingKata-Nunit\Bowling\bin\Debug\TechTalk.SpecFlow.dll
-C:\Source\BowlingKata-Nunit\Bowling\obj\Debug\Bowling.csprojResolveAssemblyReference.cache
 C:\Source\BowlingKata-Nunit\Bowling\obj\Debug\Bowling.dll
 C:\Source\BowlingKata-Nunit\Bowling\obj\Debug\Bowling.pdb

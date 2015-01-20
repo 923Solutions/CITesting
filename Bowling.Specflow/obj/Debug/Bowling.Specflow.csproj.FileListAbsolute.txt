@@ -8,6 +8,7 @@ C:\Source\SpecFlow-Examples\BowlingKata\BowlingKata-Nunit\Bowling.Specflow\bin\D
 C:\Source\SpecFlow-Examples\BowlingKata\BowlingKata-Nunit\Bowling.Specflow\bin\Debug\Bowling.pdb
 C:\Source\SpecFlow-Examples\BowlingKata\BowlingKata-Nunit\Bowling.Specflow\obj\Debug\Bowling.Specflow.dll
 C:\Source\SpecFlow-Examples\BowlingKata\BowlingKata-Nunit\Bowling.Specflow\obj\Debug\Bowling.Specflow.pdb
+C:\Source\BowlingKata-Nunit\Bowling.Specflow\obj\Debug\Bowling.Specflow.csprojResolveAssemblyReference.cache
 C:\Source\BowlingKata-Nunit\Bowling.Specflow\bin\Debug\Bowling.Specflow.dll.config
 C:\Source\BowlingKata-Nunit\Bowling.Specflow\bin\Debug\Bowling.Specflow.dll
 C:\Source\BowlingKata-Nunit\Bowling.Specflow\bin\Debug\Bowling.Specflow.pdb
@@ -15,6 +16,5 @@ C:\Source\BowlingKata-Nunit\Bowling.Specflow\bin\Debug\Bowling.dll
 C:\Source\BowlingKata-Nunit\Bowling.Specflow\bin\Debug\nunit.framework.dll
 C:\Source\BowlingKata-Nunit\Bowling.Specflow\bin\Debug\TechTalk.SpecFlow.dll
 C:\Source\BowlingKata-Nunit\Bowling.Specflow\bin\Debug\Bowling.pdb
-C:\Source\BowlingKata-Nunit\Bowling.Specflow\obj\Debug\Bowling.Specflow.csprojResolveAssemblyReference.cache
 C:\Source\BowlingKata-Nunit\Bowling.Specflow\obj\Debug\Bowling.Specflow.dll
 C:\Source\BowlingKata-Nunit\Bowling.Specflow\obj\Debug\Bowling.Specflow.pdb
