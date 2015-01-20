@@ -1,0 +1,7 @@
+C:\Source\SpecFlow-Examples\BowlingKata\BowlingKata-Nunit\Bowling\bin\Debug\Bowling.dll
+C:\Source\SpecFlow-Examples\BowlingKata\BowlingKata-Nunit\Bowling\bin\Debug\Bowling.pdb
+C:\Source\SpecFlow-Examples\BowlingKata\BowlingKata-Nunit\Bowling\obj\Debug\Bowling.csprojResolveAssemblyReference.cache
+C:\Source\SpecFlow-Examples\BowlingKata\BowlingKata-Nunit\Bowling\obj\Debug\Bowling.dll
+C:\Source\SpecFlow-Examples\BowlingKata\BowlingKata-Nunit\Bowling\obj\Debug\Bowling.pdb
+C:\Source\SpecFlow-Examples\BowlingKata\BowlingKata-Nunit\Bowling\bin\Debug\Bowling.dll.config
+C:\Source\SpecFlow-Examples\BowlingKata\BowlingKata-Nunit\Bowling\bin\Debug\TechTalk.SpecFlow.dll
