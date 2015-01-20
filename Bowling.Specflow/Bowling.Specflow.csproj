@@ -101,6 +101,8 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ScoreCalculationAlternatives.feature.cs</LastGenOutput>
     </None>
+    <None Include="specflow.exe.config" />
+    <None Include="TeamCity.SpecFlow.Reporting.psm1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Bowling\Bowling.csproj">
