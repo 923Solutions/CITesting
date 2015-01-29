@@ -65,4 +65,4 @@ Scenario: An intermediate game
   |	2		|
   |	3		|
   |	3		|
-  Then my total score should be 98
+  Then my total score should be 114

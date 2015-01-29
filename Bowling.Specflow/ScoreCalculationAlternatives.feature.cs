@@ -216,7 +216,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 46
  testRunner.When("I roll", ((string)(null)), table2, "When ");
 #line 68
-  testRunner.Then("my total score should be 98", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+  testRunner.Then("my total score should be 114", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
