@@ -2,16 +2,18 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.5" DefaultTarget="Compile">
 
 <PropertyGroup>
-	<NUnitHome>&quot;.\Packages\NUnitRunner\2.6.4&quot;</NUnitHome>
-  <NUnitConsole>&quot;$(NUnitHome)\tools\nunit-console.exe&quot;</NUnitConsole>
+	<NUnitHome>&quot;./Packages/NUnitRunner/2.6.4&quot;</NUnitHome>
+  <SpecflowHome>&quot;./Packages/SpecFlow.1.9.0&quot;</SpecflowHome>
+  <NUnitConsole>&quot;$(NUnitHome)/tools/nunit-console.exe&quot;</NUnitConsole>
   <testResultsTxt>&quot;$(teamcity_build_checkoutDir)/TestResult.txt&quot;</testResultsTxt>
   <testResultsXml>&quot;$(teamcity_build_checkoutDir)/TestResult.xml&quot;</testResultsXml>
-  <projectFile>&quot;$(teamcity_build_checkoutDir)\CrazyEvents.AcceptanceTests\CrazyEvents.AcceptanceTests.csproj&quot;</projectFile>
+  <projectFile>&quot;$(teamcity_build_checkoutDir)/Bowling.SpecFlow.csproj&quot;</projectFile>
 </PropertyGroup>
 
 <Target Name="RunTests">
   <Message Text="## Nunit console path is:  $(NunitConsole)"/>
   <Message Text="## Project file is:  $(projectFile)"/>
+  <!--<Copy SourceFiles="$(teamcity_build_checkoutDir)/SpecFlow.Exe.Config" DestinationFolder="$(SpecFlowHome)" OverwriteReadOnlyFiles="true" />-->  
   <Exec Command="$(NUnitConsole) /labels /out=$(testResultsTxt) /xml=$(testResultsXml) $(projectFile)"/>
 </Target>   
     
