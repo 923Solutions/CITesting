@@ -13,6 +13,7 @@
     <testResultsTxt>$(teamcity_build_checkoutDir)\Bowling.SpecFlow\TestResult.txt</testResultsTxt>
     <testResultsXml>$(teamcity_build_checkoutDir)\Bowling.SpecFlow\TestResult.xml</testResultsXml>
     <projectFile>$(teamcity_build_checkoutDir)\Bowling.SpecFlow\Bowling.SpecFlow.csproj</projectFile>
+    <binFile>$(teamcity_build_checkoutDir)\Bowling.SpecFlow\bin\debug\Bowling.Specflow.dll</binFile>
   </PropertyGroup>
   
   <Target Name="RunTests">    
@@ -21,7 +22,7 @@
     <!--<MakeDir Directories="$(NUnitHome)/bin/addins" />
     <Copy SourceFiles="@(NUnitAddinFiles)" DestinationFolder="$(NUnitHome)/bin/addins" />-->
     <Copy SourceFiles="$(teamcity_build_checkoutDir)\Bowling.SpecFlow\SpecFlow.Exe.Config" DestinationFolder="$(SpecFlowHome)" OverwriteReadOnlyFiles="true" />  
-    <Exec Command="$(NUnitConsole) /labels /out=$(testResultsTxt) /xml=$(testResultsXml) $(projectFile)"/>
+    <Exec Command="$(NUnitConsole) /labels /out=$(testResultsTxt) /xml=$(testResultsXml) $(binFile)"/>
   </Target>
 
   <Target Name="SpecflowReports" AfterTargets="RunTests">
