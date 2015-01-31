@@ -1,20 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.5" DefaultTarget="Compile">
 
-<PropertyGroup>
-	<NUnitHome>$(teamcity_build_checkoutDir)\Packages\NUnitRunners.2.6.4</NUnitHome>
-  <SpecflowHome>$(teamcity_build_checkoutDir)\Packages\SpecFlow.1.9.0</SpecflowHome>
-  <NUnitConsole>$(NUnitHome)\tools\nunit-console.exe</NUnitConsole>
-  <testResultsTxt>$(teamcity_build_checkoutDir)\Bowling.SpecFlow\TestResult.txt</testResultsTxt>
-  <testResultsXml>$(teamcity_build_checkoutDir)\Bowling.SpecFlow\TestResult.xml</testResultsXml>
-  <projectFile>$(teamcity_build_checkoutDir)\Bowling.SpecFlow\Bowling.SpecFlow.csproj</projectFile>
-</PropertyGroup>
+  <!--<ItemGroup>
+    <NUnitAddinFiles Include="$(teamcity_dotnet_nunitaddin)-2.6.2.*" />
+  </ItemGroup>-->
 
-<Target Name="RunTests">
-  <Message Text="## Nunit console path is:  $(NunitConsole)"/>
-  <Message Text="## Project file is:  $(projectFile)"/>
-  <Copy SourceFiles="$(teamcity_build_checkoutDir)\Bowling.SpecFlow\SpecFlow.Exe.Config" DestinationFolder="$(SpecFlowHome)" OverwriteReadOnlyFiles="true" />  
-  <Exec Command="$(NUnitConsole) /labels /out=$(testResultsTxt) /xml=$(testResultsXml) $(projectFile)"/>
-</Target>   
-    
+  <PropertyGroup>
+	  <NUnitHome>$(teamcity_build_checkoutDir)\Packages\NUnitRunners.2.6.4</NUnitHome>
+    <NUnitConsole>$(NUnitHome)\tools\nunit-console.exe</NUnitConsole>
+    <SpecflowHome>$(teamcity_build_checkoutDir)\Packages\SpecFlow.1.9.0</SpecflowHome>
+    <SpecflowExe>$(SpecflowHome)\tools\specflow.exe</SpecflowExe>   
+    <testResultsTxt>$(teamcity_build_checkoutDir)\Bowling.SpecFlow\TestResult.txt</testResultsTxt>
+    <testResultsXml>$(teamcity_build_checkoutDir)\Bowling.SpecFlow\TestResult.xml</testResultsXml>
+    <projectFile>$(teamcity_build_checkoutDir)\Bowling.SpecFlow\Bowling.SpecFlow.csproj</projectFile>
+  </PropertyGroup>
+  
+  <Target Name="RunTests">    
+    <Message Text="## Nunit console path is:  $(NunitConsole)"/>
+    <Message Text="## Project file is:  $(projectFile)"/>
+    <!--<MakeDir Directories="$(NUnitHome)/bin/addins" />
+    <Copy SourceFiles="@(NUnitAddinFiles)" DestinationFolder="$(NUnitHome)/bin/addins" />-->
+    <Copy SourceFiles="$(teamcity_build_checkoutDir)\Bowling.SpecFlow\SpecFlow.Exe.Config" DestinationFolder="$(SpecFlowHome)" OverwriteReadOnlyFiles="true" />  
+    <Exec Command="$(NUnitConsole) /labels /out=$(testResultsTxt) /xml=$(testResultsXml) $(projectFile)"/>
+  </Target>
+
+  <Target Name="SpecflowReports" AfterTargets="RunTests">
+    <Exec Command="$(SpecflowExe) nunitexecutionreport $(projectFile) /xmlTestResult:$(testResultsXml) /testOutput:$(testResultsTxt) /out:&quot;$(teamcity_build_checkoutDir)/SpecFlowExecutionReport.html&quot;"/>
+    <Exec Command="$(SpecflowExe) stepdefinitionreport $(projectFile) /out:&quot;$(teamcity_build_checkoutDir)/SpecFlowStepDefinitionReport.html&quot;"/>
+  </Target>
+
 </Project>
