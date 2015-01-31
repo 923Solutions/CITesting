@@ -7,7 +7,7 @@
   <NUnitConsole>$(NUnitHome)\tools\nunit-console.exe</NUnitConsole>
   <testResultsTxt>$(teamcity_build_checkoutDir)\Bowling.SpecFlow\TestResult.txt</testResultsTxt>
   <testResultsXml>$(teamcity_build_checkoutDir)\Bowling.SpecFlow\TestResult.xml</testResultsXml>
-  <projectFile>$(teamcity_build_checkoutDir)\Bowling.SpecFlow.csproj</projectFile>
+  <projectFile>$(teamcity_build_checkoutDir)\Bowling.SpecFlow\Bowling.SpecFlow.csproj</projectFile>
 </PropertyGroup>
 
 <Target Name="RunTests">
