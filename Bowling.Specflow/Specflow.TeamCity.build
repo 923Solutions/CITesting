@@ -2,12 +2,12 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.5" DefaultTarget="Compile">
 
 <PropertyGroup>
-	<NUnitHome>&quot;$(teamcity_build_checkoutDir)\Packages\NUnitRunners.2.6.4&quot;</NUnitHome>
-  <SpecflowHome>&quot;$(teamcity_build_checkoutDir)\Packages\SpecFlow.1.9.0&quot;</SpecflowHome>
-  <NUnitConsole>&quot;$(NUnitHome)\tools\nunit-console.exe&quot;</NUnitConsole>
-  <testResultsTxt>&quot;$(teamcity_build_checkoutDir)\Bowling.SpecFlow\TestResult.txt&quot;</testResultsTxt>
-  <testResultsXml>&quot;$(teamcity_build_checkoutDir)\Bowling.SpecFlow\TestResult.xml&quot;</testResultsXml>
-  <projectFile>&quot;$(teamcity_build_checkoutDir)\Bowling.SpecFlow.csproj&quot;</projectFile>
+	<NUnitHome>$(teamcity_build_checkoutDir)\Packages\NUnitRunners.2.6.4</NUnitHome>
+  <SpecflowHome>$(teamcity_build_checkoutDir)\Packages\SpecFlow.1.9.0</SpecflowHome>
+  <NUnitConsole>$(NUnitHome)\tools\nunit-console.exe</NUnitConsole>
+  <testResultsTxt>$(teamcity_build_checkoutDir)\Bowling.SpecFlow\TestResult.txt</testResultsTxt>
+  <testResultsXml>$(teamcity_build_checkoutDir)\Bowling.SpecFlow\TestResult.xml</testResultsXml>
+  <projectFile>$(teamcity_build_checkoutDir)\Bowling.SpecFlow.csproj</projectFile>
 </PropertyGroup>
 
 <Target Name="RunTests">
