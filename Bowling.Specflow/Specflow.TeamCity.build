@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.5" DefaultTarget="Compile">
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5" DefaultTarget="Compile">
 
   <!--<ItemGroup>
     <NUnitAddinFiles Include="$(teamcity_dotnet_nunitaddin)-2.6.2.*" />
@@ -26,8 +26,8 @@
   </Target>
 
   <Target Name="SpecflowReports" AfterTargets="RunTests">
-    <Exec Command="$(SpecflowExe) nunitexecutionreport $(projectFile) /xmlTestResult:$(testResultsXml) /testOutput:$(testResultsTxt) /out:&quot;$(teamcity_build_checkoutDir)/SpecFlowExecutionReport.html&quot;"/>
-    <Exec Command="$(SpecflowExe) stepdefinitionreport $(projectFile) /out:&quot;$(teamcity_build_checkoutDir)/SpecFlowStepDefinitionReport.html&quot;"/>
+    <Exec Command="$(SpecflowExe) nunitexecutionreport $(projectFile) /xmlTestResult:$(testResultsXml) /testOutput:$(testResultsTxt) /out:$(teamcity_build_checkoutDir)/SpecFlowExecutionReport.html"/>
+    <Exec Command="$(SpecflowExe) stepdefinitionreport $(projectFile) /out:$(teamcity_build_checkoutDir)/SpecFlowStepDefinitionReport.html"/>
   </Target>
 
 </Project>
