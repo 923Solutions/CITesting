@@ -6,8 +6,8 @@
   </ItemGroup>-->
 
   <PropertyGroup>
-	  <NUnitHome>$(teamcity_build_checkoutDir)\Packages\NUnitRunners.2.6.4</NUnitHome>
-    <NUnitConsole>$(NUnitHome)\tools\nunit-console.exe</NUnitConsole>
+	  <NUnitHome>C:\Program Files (x86)\NUnit.2.6.4</NUnitHome>
+    <NUnitConsole>$(NUnitHome)\bin\nunit-console.exe</NUnitConsole>
     <SpecflowHome>$(teamcity_build_checkoutDir)\Packages\SpecFlow.1.9.0</SpecflowHome>
     <SpecflowExe>$(SpecflowHome)\tools\specflow.exe</SpecflowExe>   
     <testResultsTxt>$(teamcity_build_checkoutDir)\Bowling.SpecFlow\TestResult.txt</testResultsTxt>
