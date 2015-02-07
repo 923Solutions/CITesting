@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5" DefaultTarget="Compile">
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.5" DefaultTarget="Compile">
 
   <!--<ItemGroup>
     <NUnitAddinFiles Include="$(teamcity_dotnet_nunitaddin)-2.6.2.*" />
@@ -17,13 +17,13 @@
     
   </PropertyGroup>
   
-  <Target Name="RunTests">    
-    <Message Text="## Nunit console path is:  $(NunitConsole)"/>
-    <Message Text="## Project file is:  $(projectFile)"/>
+  <Target Name="RunTests">
     <!--<MakeDir Directories="$(NUnitHome)/bin/addins" />
     <Copy SourceFiles="@(NUnitAddinFiles)" DestinationFolder="$(NUnitHome)/bin/addins" />-->
     <Copy SourceFiles="$(ProjectRoot)\Bowling.SpecFlow\SpecFlow.Exe.Config" DestinationFolder="$(SpecFlowHome)" OverwriteReadOnlyFiles="true" />  
     <Exec Command="&quot;$(NUnitConsole)&quot; /labels /out=$(testResultsTxt) /xml=$(testResultsXml) $(projectFile)"/>
+    <Exec Command="$(SpecflowExe) nunitexecutionreport $(projectFile) /xmlTestResult:$(testResultsXml) /testOutput:$(testResultsTxt) /out:$(ProjectRoot)/SpecFlowExecutionReport.html"/>
+    
   </Target>
 
   <!--<Target Name="SpecflowReports" AfterTargets="RunTests">
