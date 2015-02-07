@@ -6,7 +6,7 @@
   </ItemGroup>-->
 
   <PropertyGroup>
-	  <NUnitHome>C:\Program Files (x86)\NUnit.2.6.4</NUnitHome>
+	  <NUnitHome>C:\Program Files (x86)\NUnit 2.6.4</NUnitHome>
     <NUnitConsole>$(NUnitHome)\bin\nunit-console.exe</NUnitConsole>
     <SpecflowHome>$(teamcity_build_checkoutDir)\Packages\SpecFlow.1.9.0</SpecflowHome>
     <SpecflowExe>$(SpecflowHome)\tools\specflow.exe</SpecflowExe>   
@@ -25,9 +25,9 @@
     <Exec Command="&quot;$(NUnitConsole)&quot; /labels /out=$(testResultsTxt) /xml=$(testResultsXml) $(binFile)"/>
   </Target>
 
-  <Target Name="SpecflowReports" AfterTargets="RunTests">
+  <!--<Target Name="SpecflowReports" AfterTargets="RunTests">
     <Exec Command="$(SpecflowExe) nunitexecutionreport $(projectFile) /xmlTestResult:$(testResultsXml) /testOutput:$(testResultsTxt) /out:$(teamcity_build_checkoutDir)/SpecFlowExecutionReport.html"/>
     <Exec Command="$(SpecflowExe) stepdefinitionreport $(projectFile) /out:$(teamcity_build_checkoutDir)/SpecFlowStepDefinitionReport.html"/>
-  </Target>
+  </Target>-->
 
 </Project>
