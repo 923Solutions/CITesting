@@ -22,7 +22,8 @@
     <!--<MakeDir Directories="$(NUnitHome)/bin/addins" />
     <Copy SourceFiles="@(NUnitAddinFiles)" DestinationFolder="$(NUnitHome)/bin/addins" />-->
     <Copy SourceFiles="$(teamcity_build_checkoutDir)\Bowling.SpecFlow\SpecFlow.Exe.Config" DestinationFolder="$(SpecFlowHome)" OverwriteReadOnlyFiles="true" />  
-    <Exec Command="&quot;$(NUnitConsole)&quot; /labels /out=$(testResultsTxt) /xml=$(testResultsXml) $(binFile)"/>
+    <!--<Exec Command="&quot;$(NUnitConsole)&quot; /labels /out=$(testResultsTxt) /xml=$(testResultsXml) $(binFile)"/>-->
+    <Exec Command="&quot;$(NUnitConsole)&quot; /labels /out=$(testResultsTxt) /xml=$(testResultsXml) $(projectFile)"/>
   </Target>
 
   <!--<Target Name="SpecflowReports" AfterTargets="RunTests">
