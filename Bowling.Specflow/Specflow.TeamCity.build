@@ -6,7 +6,7 @@
   </ItemGroup>-->
 
   <PropertyGroup>
-	  <NUnitHome>C:\Program Files (x86)\NUnit.2.6.4</NUnitHome>
+	<NUnitHome>C:\Program Files (x86)\NUnit 2.6.4</NUnitHome>
     <NUnitConsole>$(NUnitHome)\bin\nunit-console.exe</NUnitConsole>
     <SpecflowHome>$(teamcity_build_checkoutDir)\Packages\SpecFlow.1.9.0</SpecflowHome>
     <SpecflowExe>$(SpecflowHome)\tools\specflow.exe</SpecflowExe>   
