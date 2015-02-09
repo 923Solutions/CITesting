@@ -22,7 +22,8 @@
     <Copy SourceFiles="@(NUnitAddinFiles)" DestinationFolder="$(NUnitHome)/bin/addins" />-->
     <Copy SourceFiles="$(ProjectRoot)\Bowling.SpecFlow\SpecFlow.Exe.Config" DestinationFolder="$(SpecFlowTools)" OverwriteReadOnlyFiles="true" />  
     <Exec Command="&quot;$(NUnitConsole)&quot; /labels /out=$(testResultsTxt) /xml=$(testResultsXml) $(projectFile)"/>
-    <Exec Command="$(SpecflowExe) nunitexecutionreport $(projectFile) /xmlTestResult:$(testResultsXml) /testOutput:$(testResultsTxt) /out:$(ProjectRoot)/SpecFlowExecutionReport.html"/>
+    <Exec Command="$(SpecflowExe) nunitexecutionreport $(projectFile) /xmlTestResult:$(testResultsXml) /testOutput:$(testResultsTxt) /out:$(ProjectRoot)\SpecFlowExecutionReport.html"/>
+    <Exec Command="$(SpecflowExe) stepdefinitionreport $(projectFile) /out:$(ProjectRoot)/SpecFlowStepDefinitionReport.html"/>
     
   </Target>
 
