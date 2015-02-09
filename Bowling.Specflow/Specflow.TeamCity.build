@@ -9,8 +9,8 @@
     <ProjectRoot>$(teamcity_build_checkoutDir)</ProjectRoot>
 	  <NUnitHome>C:\Program Files (x86)\NUnit 2.6.4</NUnitHome>
     <NUnitConsole>$(NUnitHome)\bin\nunit-console.exe</NUnitConsole>
-    <SpecflowHome>$(teamcity_build_checkoutDir)\Packages\SpecFlow.1.9.0</SpecflowHome>
-    <SpecflowExe>$(SpecflowHome)\tools\specflow.exe</SpecflowExe>   
+    <SpecflowTools>$(teamcity_build_checkoutDir)\Packages\SpecFlow.1.9.0\tools</SpecflowTools>
+    <SpecflowExe>$(SpecflowTools)\specflow.exe</SpecflowExe>   
     <testResultsTxt>$(ProjectRoot)\Bowling.SpecFlow\TestResult.txt</testResultsTxt>
     <testResultsXml>$(ProjectRoot)\Bowling.SpecFlow\TestResult.xml</testResultsXml>
     <projectFile>$(ProjectRoot)\Bowling.SpecFlow\Bowling.SpecFlow.csproj</projectFile>
@@ -20,7 +20,7 @@
   <Target Name="RunTests">
     <!--<MakeDir Directories="$(NUnitHome)/bin/addins" />
     <Copy SourceFiles="@(NUnitAddinFiles)" DestinationFolder="$(NUnitHome)/bin/addins" />-->
-    <Copy SourceFiles="$(ProjectRoot)\Bowling.SpecFlow\SpecFlow.Exe.Config" DestinationFolder="$(SpecFlowHome)" OverwriteReadOnlyFiles="true" />  
+    <Copy SourceFiles="$(ProjectRoot)\Bowling.SpecFlow\SpecFlow.Exe.Config" DestinationFolder="$(SpecFlowTools)" OverwriteReadOnlyFiles="true" />  
     <Exec Command="&quot;$(NUnitConsole)&quot; /labels /out=$(testResultsTxt) /xml=$(testResultsXml) $(projectFile)"/>
     <Exec Command="$(SpecflowExe) nunitexecutionreport $(projectFile) /xmlTestResult:$(testResultsXml) /testOutput:$(testResultsTxt) /out:$(ProjectRoot)/SpecFlowExecutionReport.html"/>
     
