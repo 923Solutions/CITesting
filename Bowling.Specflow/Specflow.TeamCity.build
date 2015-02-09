@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0" DefaultTarget="Compile">
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.5" DefaultTarget="Compile">
 
   <!--<ItemGroup>
     <NUnitAddinFiles Include="$(teamcity_dotnet_nunitaddin)-2.6.2.*" />
@@ -14,22 +14,16 @@
     <testResultsTxt>$(ProjectRoot)\Bowling.SpecFlow\TestResult.txt</testResultsTxt>
     <testResultsXml>$(ProjectRoot)\Bowling.SpecFlow\TestResult.xml</testResultsXml>
     <projectFile>$(ProjectRoot)\Bowling.SpecFlow\Bowling.SpecFlow.csproj</projectFile>
-    
   </PropertyGroup>
   
   <Target Name="RunTests">
     <!--<MakeDir Directories="$(NUnitHome)/bin/addins" />
     <Copy SourceFiles="@(NUnitAddinFiles)" DestinationFolder="$(NUnitHome)/bin/addins" />-->
+    <Message Text="TeamCity .NET nunit addin folder:$(teamcity_dotnet_nunitaddin)"/>
     <Copy SourceFiles="$(ProjectRoot)\Bowling.SpecFlow\SpecFlow.Exe.Config" DestinationFolder="$(SpecFlowTools)" OverwriteReadOnlyFiles="true" />  
     <Exec Command="&quot;$(NUnitConsole)&quot; /labels /out=$(testResultsTxt) /xml=$(testResultsXml) $(projectFile)"/>
     <Exec Command="$(SpecflowExe) nunitexecutionreport $(projectFile) /xmlTestResult:$(testResultsXml) /testOutput:$(testResultsTxt) /out:$(ProjectRoot)\SpecFlowExecutionReport.html"/>
-    <Exec Command="$(SpecflowExe) stepdefinitionreport $(projectFile) /out:$(ProjectRoot)/SpecFlowStepDefinitionReport.html"/>
-    
+    <Exec Command="$(SpecflowExe) stepdefinitionreport $(projectFile) /out:$(ProjectRoot)/SpecFlowStepDefinitionReport.html"/>    
   </Target>
-
-  <!--<Target Name="SpecflowReports" AfterTargets="RunTests">
-    <Exec Command="$(SpecflowExe) nunitexecutionreport $(projectFile) /xmlTestResult:$(testResultsXml) /testOutput:$(testResultsTxt) /out:$(teamcity_build_checkoutDir)/SpecFlowExecutionReport.html"/>
-    <Exec Command="$(SpecflowExe) stepdefinitionreport $(projectFile) /out:$(teamcity_build_checkoutDir)/SpecFlowStepDefinitionReport.html"/>
-  </Target>-->
 
 </Project>
