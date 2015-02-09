@@ -21,7 +21,7 @@
     <Message Text="## Project file is:  $(projectFile)"/>
     <!--<MakeDir Directories="$(NUnitHome)/bin/addins" />
     <Copy SourceFiles="@(NUnitAddinFiles)" DestinationFolder="$(NUnitHome)/bin/addins" />-->
-    <Copy SourceFiles="$(teamcity_build_checkoutDir)\Bowling.SpecFlow\SpecFlow.Exe.Config" DestinationFolder="$(SpecFlowHome)" OverwriteReadOnlyFiles="true" />  
+    <Copy SourceFiles="$(teamcity_build_checkoutDir)\Bowling.SpecFlow\SpecFlow.Exe.Config" DestinationFolder="$(SpecFlowExe)" OverwriteReadOnlyFiles="true" />  
     <Exec Command="&quot;$(NUnitConsole)&quot; /labels /out=$(testResultsTxt) /xml=$(testResultsXml) $(binFile)"/>
   </Target>
 
