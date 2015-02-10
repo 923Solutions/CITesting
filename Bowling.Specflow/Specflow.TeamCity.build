@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.5" DefaultTarget="Compile">
 
-  <!--<ItemGroup>
-    <NUnitAddinFiles Include="$(teamcity_dotnet_nunitaddin)-2.6.2.*" />
-  </ItemGroup>-->
+  <ItemGroup>
+    <NUnitAddinFiles Include="$(teamcity_dotnet_nunitaddin)-2.6.3.*" />
+  </ItemGroup>
 
   <PropertyGroup>
     <ProjectRoot>$(teamcity_build_checkoutDir)</ProjectRoot>
@@ -19,10 +19,12 @@
   </PropertyGroup>
   
   <Target Name="RunTests">
-    <!--<MakeDir Directories="$(NUnitHome)/bin/addins" />
-    <Copy SourceFiles="@(NUnitAddinFiles)" DestinationFolder="$(NUnitHome)/bin/addins" />-->
+    <MakeDir Directories="$(NUnitHome)\tools\addins" />
+    <Copy SourceFiles="@(NUnitAddinFiles)" DestinationFolder="$(NUnitHome)\tools\addins" />
     <Message Text="TeamCity .NET nunit addin folder:$(teamcity_dotnet_nunitaddin)"/>
+    
     <Copy SourceFiles="$(ProjectRoot)\Bowling.SpecFlow\SpecFlow.Exe.Config" DestinationFolder="$(SpecFlowTools)" OverwriteReadOnlyFiles="true" />  
+    
     <Exec Command="&quot;$(NUnitConsole)&quot; /labels /out=$(testResultsTxt) /xml=$(testResultsXml) $(projectFile)"/>
     <Exec Command="$(SpecflowExe) nunitexecutionreport $(projectFile) /xmlTestResult:$(testResultsXml) /testOutput:$(testResultsTxt) /out:$(ProjectRoot)\SpecFlowExecutionReport.html"/>
     <Exec Command="$(SpecflowExe) stepdefinitionreport $(projectFile) /out:$(ProjectRoot)/SpecFlowStepDefinitionReport.html"/>    
