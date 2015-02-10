@@ -7,9 +7,11 @@
 
   <PropertyGroup>
     <ProjectRoot>$(teamcity_build_checkoutDir)</ProjectRoot>
-	  <NUnitHome>C:\Program Files (x86)\NUnit 2.6.4</NUnitHome>
-    <NUnitConsole>$(NUnitHome)\bin\nunit-console.exe</NUnitConsole>
-    <SpecflowTools>$(teamcity_build_checkoutDir)\Packages\SpecFlow.1.9.0\tools</SpecflowTools>
+	  <!--<NUnitHome>C:\Program Files (x86)\NUnit 2.6.4</NUnitHome>
+    <NUnitConsole>$(NUnitHome)\bin\nunit-console.exe</NUnitConsole>-->
+    <NUnitHome>$(ProjectRoot)\Packages\NUnit.Runners.2.6.4</NUnitHome>
+    <NUnitConsole>$(NUnitHome)\tools\nunit-console.exe</NUnitConsole>
+    <SpecflowTools>$(ProjectRoot)\Packages\SpecFlow.1.9.0\tools</SpecflowTools>
     <SpecflowExe>$(SpecflowTools)\specflow.exe</SpecflowExe>   
     <testResultsTxt>$(ProjectRoot)\Bowling.SpecFlow\TestResult.txt</testResultsTxt>
     <testResultsXml>$(ProjectRoot)\Bowling.SpecFlow\TestResult.xml</testResultsXml>
